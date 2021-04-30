@@ -1,12 +1,11 @@
 import repository from '../api/repositiry'
 import { RepositoryActionType as ActionType } from '../actionType'
-import {Dispatch} from 'redux'
+import { Dispatch } from 'redux'
 import { RepositoryAction as Action } from '../action'
 
 export const getPostsAction = () => {
-    return async (dispatch: Dispatch<Action>) => {
+    return (dispatch: Dispatch<Action>) => {
         dispatch({ type: ActionType.SEARCH_REPOSITORY_REQUEST })
-
         repository.getPosts()
             .then(response => {
                 console.log(response)
